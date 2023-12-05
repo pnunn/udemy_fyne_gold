@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fyne.io/fyne/v2/test"
+	"gold/repository"
 	"io"
 	"net/http"
 	"os"
@@ -14,7 +15,9 @@ var testApp Config
 func TestMain(m *testing.M) {
 	a := test.NewApp()
 	testApp.App = a
+	testApp.MainWindow = a.NewWindow("")
 	testApp.HTTPClient = client
+	testApp.DB = repository.NewTestRepository()
 	os.Exit(m.Run())
 }
 

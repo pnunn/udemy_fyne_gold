@@ -17,7 +17,7 @@ import (
 func (app *Config) pricesTab() *fyne.Container {
 	chart := app.getChart()
 	chartContainer := container.NewVBox(chart)
-	app.PriceContainer = chartContainer
+	app.PriceChartContainer = chartContainer
 
 	return chartContainer
 }
@@ -35,7 +35,7 @@ func (app *Config) getChart() *canvas.Image {
 	}
 
 	img.SetMinSize(fyne.Size{
-		Width:  770,
+		Width: 770,
 		Height: 410,
 	})
 
